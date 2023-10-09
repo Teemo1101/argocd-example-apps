@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: test-api
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: test-api
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: test-api
     spec:
       containers:
       - image: docker.io/bitnami/nginx:1.25.2-debian-11-r3
-        name: guestbook-ui
+        name: test-api
         resources:
           requests:
             cpu: 1m
